@@ -6,6 +6,8 @@
 	#progress.yt-page-navigation-progress, /* pade loading progressbar */
 	.yt-spec-icon-badge-shape--type-notification .yt-spec-icon-badge-shape__badge, /* notification badge */
 	#progress.ytd-thumbnail-overlay-resume-playback-renderer, /* feed progressbar */
+	.ytProgressBarLineProgressBarPlayed, /* feed preview progressbar */
+	.ytProgressBarPlayheadProgressBarPlayheadDot, /* dot */
 	.badge-style-type-live-now-alternate.ytd-badge-supported-renderer, /* live badge */
 	.ytp-swatch-background-color /* video progressbar */
 	{ background: #f00 !important }
