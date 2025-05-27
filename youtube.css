@@ -1,0 +1,27 @@
+@-moz-document domain(youtube.com) {
+	/* UNPINK */
+		#logo-icon g:first-of-type path:first-of-type { fill: #f00 !important } /* header icon */
+		#progress.ytd-thumbnail-overlay-resume-playback-renderer { background: #f00 !important } /* feed progressbar */
+		.ytp-swatch-background-color { background: #f00 !important } /* video progressbar */
+		/* .ytp-swatch-background-color { background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,154,0,1) 10%, rgba(208,222,33,1) 20%, rgba(79,220,74,1) 30%, rgba(63,218,216,1) 40%, rgba(47,201,226,1) 50%, rgba(28,127,238,1) 60%, rgba(95,21,242,1) 70%, rgba(186,12,248,1) 80%, rgba(251,7,217,1) 90%, rgba(255,0,0,1) 100%) !important } */
+    .ytp-cued-thumbnail-overlay:hover .ytp-large-play-button-bg { fill: #f00 !important } /* video big play button */
+    #progress.yt-page-navigation-progress { background: #f00 !important } /* pade loading progressbar */
+
+	/* FEED */
+		/* removes */
+		ytd-rich-section-renderer:has(ytm-shorts-lockup-view-model-v2), /* shorts */
+		ytd-rich-section-renderer:has(mini-game-card-view-model), /* minigames */
+		ytd-rich-section-renderer:has(ytd-post-renderer), /* latest posts */
+		ytd-rich-item-renderer:has(.ytd-feed-nudge-renderer), /* "looking for something different?" */
+		ytm-paid-content-overlay-renderer /* paid content popup on video preview*/ {
+			display: none !important
+		}
+		/* fixes */
+		/* annoying corners on video preview */
+		#video-preview #thumbnail-container { display: none !important }
+		#video-preview #inline-preview-player { border-radius: 12px !important }
+		#video-preview #player-container { background-color: transparent !important }
+		/* live avatars */
+		ytd-rich-item-renderer #avatar-link { display: block !important }
+		ytd-rich-item-renderer #decorated-avatar { display: none !important }
+}
