@@ -22,6 +22,7 @@
 			ytd-mini-guide-entry-renderer[aria-label="Shorts"], /* shorts button in side bar */
 			ytd-guide-entry-renderer:has([title="Shorts"]), /* shorts button in side menu */
 			ytd-rich-section-renderer:has(ytm-shorts-lockup-view-model-v2), /* shorts shelf everywhere */
+			ytd-item-section-renderer:has(ytd-reel-shelf-renderer), /* another in channel ?? */
 			ytd-video-renderer:has([overlay-style="SHORTS"]), /* in search among videos (maybe feed or channels too) */
 			yt-tab-shape[tab-title="Shorts"], /* channel tab */
 			ytd-reel-shelf-renderer /* in video suggestions */
