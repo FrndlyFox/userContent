@@ -12,6 +12,7 @@
 ```
 chrome
 ├ userContent
+│ ├ global.css
 │ └ youtube.css
 ├ userChrome.css
 └ userContent.css
@@ -20,6 +21,7 @@ chrome
 ##### userContent.css
 
 ```
+@import url("userContent/global.css");
 @import url("userContent/youtube.css");
 ```
 
@@ -27,7 +29,6 @@ chrome
 
 ## youtube
 
-- `youtube.refresh` master-switch
 - `youtube.unpink`
 - `youtube.shorts.hide`
 - `youtube.sidemenu.cleanup`

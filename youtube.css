@@ -1,101 +1,97 @@
 @-moz-document domain(youtube.com) {
-	@media -moz-pref("youtube.refresh") {
+	:root {
+		--accent: #f00 
+	}
+
+	@media -moz-pref("youtube.gay") {
 		:root {
-			--accent: #f00 
+			--accent: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,154,0,1) 10%, rgba(208,222,33,1) 20%, rgba(79,220,74,1) 30%, rgba(63,218,216,1) 40%, rgba(47,201,226,1) 50%, rgba(28,127,238,1) 60%, rgba(95,21,242,1) 70%, rgba(186,12,248,1) 80%, rgba(251,7,217,1) 90%, rgba(255,0,0,1) 100%)
 		}
+	}
 
-		@media -moz-pref("youtube.gay") {
-			:root {
-				--accent: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,154,0,1) 10%, rgba(208,222,33,1) 20%, rgba(79,220,74,1) 30%, rgba(63,218,216,1) 40%, rgba(47,201,226,1) 50%, rgba(28,127,238,1) 60%, rgba(95,21,242,1) 70%, rgba(186,12,248,1) 80%, rgba(251,7,217,1) 90%, rgba(255,0,0,1) 100%)
-			}
-		}
+	@media -moz-pref("youtube.unpink") {
+		#logo-icon g:first-of-type path:first-of-type, /* header icon */
+		#hearted svg, /* creators heart in comment */
+		.ytp-cued-thumbnail-overlay:hover .ytp-large-play-button-bg /* video big play button */
+		{	fill: #f00 !important } 
+	}
 
-		@media -moz-pref("youtube.unpink") {
-			#logo-icon g:first-of-type path:first-of-type, /* header icon */
-			#hearted svg, /* creators heart in comment */
-			.ytp-cued-thumbnail-overlay:hover .ytp-large-play-button-bg /* video big play button */
-			{	fill: #f00 !important } 
-		}
+	@media -moz-pref("youtube.unpink") or -moz-pref("youtube.gay") {
+		#progress.yt-page-navigation-progress, /* pade loading progressbar */
+		.yt-spec-icon-badge-shape--type-notification .yt-spec-icon-badge-shape__badge, /* notification badge */
+		#progress.ytd-thumbnail-overlay-resume-playback-renderer, /* thumbnail progressbar */
+		.badge-shape-wiz--thumbnail-live, /* thumbnail live badge */
+		.ytProgressBarLineProgressBarPlayed, /* preview progressbar */
+		.ytProgressBarPlayheadProgressBarPlayheadDot, /* ===== dot ===== */
+		.badge-style-type-live-now-alternate.ytd-badge-supported-renderer, /* live badge */
+		.yt-spec-avatar-shape--live-ring::after, /* avatar live ring */
+		.yt-spec-avatar-shape__live-badge, /* avatar live badge */
+		.ytp-swatch-background-color /* video progressbar */
+		{ background: var(--accent) !important }
+	}
 
-		@media -moz-pref("youtube.unpink") or -moz-pref("youtube.gay") {
-			#progress.yt-page-navigation-progress, /* pade loading progressbar */
-			.yt-spec-icon-badge-shape--type-notification .yt-spec-icon-badge-shape__badge, /* notification badge */
-			#progress.ytd-thumbnail-overlay-resume-playback-renderer, /* thumbnail progressbar */
-			.badge-shape-wiz--thumbnail-live, /* thumbnail live badge */
-			.ytProgressBarLineProgressBarPlayed, /* preview progressbar */
-			.ytProgressBarPlayheadProgressBarPlayheadDot, /* ===== dot ===== */
-			.badge-style-type-live-now-alternate.ytd-badge-supported-renderer, /* live badge */
-			.yt-spec-avatar-shape--live-ring::after, /* avatar live ring */
-			.yt-spec-avatar-shape__live-badge, /* avatar live badge */
-			.ytp-swatch-background-color /* video progressbar */
-			{ background: var(--accent) !important }
-		}
+	@media -moz-pref("youtube.shorts.hide") {
+		ytd-mini-guide-entry-renderer[aria-label="Shorts"], /* shorts button in side bar */
+		ytd-guide-entry-renderer:has([title="Shorts"]), /* shorts button in side menu */
+		ytd-rich-section-renderer:has(ytm-shorts-lockup-view-model-v2), /* shorts shelf everywhere */
+		ytd-item-section-renderer:has(ytd-reel-shelf-renderer), /* another in channel ?? */
+		ytd-video-renderer:has([overlay-style="SHORTS"]), /* in search among videos (maybe feed or channels too) */
+		yt-tab-shape[tab-title="Shorts"], /* channel tab */
+		ytd-reel-shelf-renderer /* in video suggestions */
+		{ display: none !important }
+	}
 
-		@media -moz-pref("youtube.shorts.hide") {
-			ytd-mini-guide-entry-renderer[aria-label="Shorts"], /* shorts button in side bar */
-			ytd-guide-entry-renderer:has([title="Shorts"]), /* shorts button in side menu */
-			ytd-rich-section-renderer:has(ytm-shorts-lockup-view-model-v2), /* shorts shelf everywhere */
-			ytd-item-section-renderer:has(ytd-reel-shelf-renderer), /* another in channel ?? */
-			ytd-video-renderer:has([overlay-style="SHORTS"]), /* in search among videos (maybe feed or channels too) */
-			yt-tab-shape[tab-title="Shorts"], /* channel tab */
-			ytd-reel-shelf-renderer /* in video suggestions */
-			{ display: none !important }
-		}
+	@media -moz-pref("youtube.sidemenu.cleanup") {
+		ytd-guide-section-renderer:has([title="Trending"]), /* remove explore section */
+		ytd-guide-section-renderer:has([title*="Studio"]), /* remove "more from youtube" section */
+		ytd-guide-renderer #footer /* remove footer */
+		{ display: none !important }
+	}
 
-		@media -moz-pref("youtube.sidemenu.cleanup") {
-			ytd-guide-section-renderer:has([title="Trending"]), /* remove explore section */
-			ytd-guide-section-renderer:has([title*="Studio"]), /* remove "more from youtube" section */
-			ytd-guide-renderer #footer /* remove footer */
-			{ display: none !important }
-		}
+	@media -moz-pref("youtube.feed.cleanup") {
+		ytd-rich-section-renderer:has(mini-game-card-view-model), /* remove minigames */
+		ytd-rich-section-renderer:has(ytd-post-renderer), /* remove latest posts */
+		ytd-rich-section-renderer:has(ytd-inline-survey-renderer), /* remove video survey */
+		ytd-rich-item-renderer:has(.ytd-feed-nudge-renderer) /* remove "looking for something different?" */
+		{ display: none !important }
+	}
 
-		@media -moz-pref("youtube.feed.cleanup") {
-			ytd-rich-section-renderer:has(mini-game-card-view-model), /* remove minigames */
-			ytd-rich-section-renderer:has(ytd-post-renderer), /* remove latest posts */
-			ytd-rich-section-renderer:has(ytd-inline-survey-renderer), /* remove video survey */
-			ytd-rich-item-renderer:has(.ytd-feed-nudge-renderer) /* remove "looking for something different?" */
-			{ display: none !important }
-		}
+	@media -moz-pref("youtube.thumbnail.cleanup") {
+		ytm-paid-content-overlay-renderer /* remove paid content popup on video preview */
+		{ display: none !important }
+		/* remove live avatars */
+		ytd-rich-item-renderer #decorated-avatar { display: none !important }
+		ytd-rich-item-renderer #avatar-link { display: block !important }
+		/* fix annoying corners on video preview */
+		#video-preview #thumbnail-container { border-radius: 12px !important; overflow: clip !important }
+		#video-preview #inline-preview-player { border-radius: 12px !important }
+		#video-preview #player-container { background-color: transparent !important }
+	}
 
-		@media -moz-pref("youtube.thumbnail.cleanup") {
-			ytm-paid-content-overlay-renderer /* remove paid content popup on video preview */
-			{ display: none !important }
-			/* remove live avatars */
-			ytd-rich-item-renderer #decorated-avatar { display: none !important }
-			ytd-rich-item-renderer #avatar-link { display: block !important }
-			/* fix annoying corners on video preview */
-			#video-preview #thumbnail-container { border-radius: 12px !important; overflow: clip !important }
-			#video-preview #inline-preview-player { border-radius: 12px !important }
-			#video-preview #player-container { background-color: transparent !important }
-		}
+	@media -moz-pref("youtube.player.cleanup") {
+		.ytp-paid-content-overlay, /* remove paid content popup from video */
+		.iv-branding, /* remove channel icon from video */
+		yt-button-view-model:has(button[title="Clip"]), /* remove clip button */
+		yt-button-view-model:has(button[title$="Thanks"]), /* remove thanks button */
+		ytd-rich-metadata-renderer[component-style="RICH_METADATA_RENDERER_STYLE_TOPIC"] /* remove "browse all gaming" etc button */
+		{ display: none !important }
+		ytd-rich-metadata-renderer { max-width: none !important } /* ... streth the rest */
+	}
 
-		@media -moz-pref("youtube.player.cleanup") {
-			.ytp-paid-content-overlay, /* remove paid content popup from video */
-			.iv-branding, /* remove channel icon from video */
-			yt-button-view-model:has(button[title="Clip"]), /* remove clip button */
-			yt-button-view-model:has(button[title$="Thanks"]), /* remove thanks button */
-			ytd-rich-metadata-renderer[component-style="RICH_METADATA_RENDERER_STYLE_TOPIC"] /* remove "browse all gaming" etc button */
-			{ display: none !important }
-			ytd-rich-metadata-renderer { max-width: none !important } /* ... streth the rest */
-		}
+	@media -moz-pref("youtube.player.theater.pretty") {
+		ytd-app:not([fullscreen]) #full-bleed-container /* round corners and margins on video player */
+		{ border-radius: 20px; margin: 0 10px !important; width: auto !important } /* ============== */
+	}
 
-		@media -moz-pref("youtube.player.theater.pretty") {
-			ytd-app:not([fullscreen]) #full-bleed-container /* round corners and margins on video player */
-			{ border-radius: 20px; margin: 0 10px !important; width: auto !important } /* ============== */
-		}
+	@media -moz-pref("youtube.header.cleanup") {
+		#voice-search-button /* remove voice search button */
+		{ display: none !important }
+	}
 
-		@media -moz-pref("youtube.header.cleanup") {
-			#voice-search-button /* remove voice search button */
-			{ display: none !important }
-		}
-
-		@media -moz-pref("youtube.channel.cleanup") {
-			/* remove avatar live ring */
-			.yt-spec-avatar-shape__live-badge--badge-extra-large,
-			.yt-spec-avatar-shape--live-ring::after
-			{ display: none !important }
-		}
-
-
+	@media -moz-pref("youtube.channel.cleanup") {
+		/* remove avatar live ring */
+		.yt-spec-avatar-shape__live-badge--badge-extra-large,
+		.yt-spec-avatar-shape--live-ring::after
+		{ display: none !important }
 	}
 }
