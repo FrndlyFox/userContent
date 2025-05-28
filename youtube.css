@@ -33,6 +33,7 @@
 		@media -moz-pref("youtube.feed.cleanup") {
 			ytd-rich-section-renderer:has(mini-game-card-view-model), /* remove minigames */
 			ytd-rich-section-renderer:has(ytd-post-renderer), /* remove latest posts */
+			ytd-rich-section-renderer:has(ytd-inline-survey-renderer), /* remove video survey */
 			ytd-rich-item-renderer:has(.ytd-feed-nudge-renderer) /* remove "looking for something different?" */
 			{ display: none !important }
 		}
