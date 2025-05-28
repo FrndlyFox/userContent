@@ -7,19 +7,24 @@
 			{	fill: #f00 !important } 
 			#progress.yt-page-navigation-progress, /* pade loading progressbar */
 			.yt-spec-icon-badge-shape--type-notification .yt-spec-icon-badge-shape__badge, /* notification badge */
-			#progress.ytd-thumbnail-overlay-resume-playback-renderer, /* feed progressbar */
-			.ytProgressBarLineProgressBarPlayed, /* feed preview progressbar */
+			#progress.ytd-thumbnail-overlay-resume-playback-renderer, /* thumbnail progressbar */
+			.badge-shape-wiz--thumbnail-live, /* thumbnail live badge */
+			.ytProgressBarLineProgressBarPlayed, /* preview progressbar */
 			.ytProgressBarPlayheadProgressBarPlayheadDot, /* ===== dot ===== */
 			.badge-style-type-live-now-alternate.ytd-badge-supported-renderer, /* live badge */
+			.yt-spec-avatar-shape--live-ring::after, /* avatar live ring */
+			.yt-spec-avatar-shape__live-badge, /* avatar live badge */
 			.ytp-swatch-background-color /* video progressbar */
 			{ background: #f00 !important }
 		}
 
 		@media -moz-pref("youtube.shorts.hide") {
-			ytd-mini-guide-entry-renderer[aria-label="Shorts"], /* remove shorts button in side bar */
-			ytd-guide-entry-renderer:has([title="Shorts"]), /* remove shorts button in side menu */
-			ytd-rich-section-renderer:has(ytm-shorts-lockup-view-model-v2), /* remove shorts in feed */
-			ytd-reel-shelf-renderer /* remove shorts in video suggestions */
+			ytd-mini-guide-entry-renderer[aria-label="Shorts"], /* shorts button in side bar */
+			ytd-guide-entry-renderer:has([title="Shorts"]), /* shorts button in side menu */
+			ytd-rich-section-renderer:has(ytm-shorts-lockup-view-model-v2), /* shorts shelf everywhere */
+			ytd-video-renderer:has([overlay-style="SHORTS"]), /* in search among videos (maybe feed or channels too) */
+			yt-tab-shape[tab-title="Shorts"], /* channel tab */
+			ytd-reel-shelf-renderer /* in video suggestions */
 			{ display: none !important }
 		}
 
@@ -38,14 +43,14 @@
 			{ display: none !important }
 		}
 
-		@media -moz-pref("youtube.feed.video.cleanup") {
+		@media -moz-pref("youtube.thumbnail.cleanup") {
 			ytm-paid-content-overlay-renderer /* remove paid content popup on video preview */
 			{ display: none !important }
 			/* remove live avatars */
 			ytd-rich-item-renderer #decorated-avatar { display: none !important }
 			ytd-rich-item-renderer #avatar-link { display: block !important }
 			/* fix annoying corners on video preview */
-			#video-preview #thumbnail-container { display: none !important }
+			#video-preview #thumbnail-container { border-radius: 12px !important; overflow: clip !important }
 			#video-preview #inline-preview-player { border-radius: 12px !important }
 			#video-preview #player-container { background-color: transparent !important }
 		}
@@ -54,7 +59,7 @@
 			.ytp-paid-content-overlay, /* remove paid content popup from video */
 			.iv-branding, /* remove channel icon from video */
 			yt-button-view-model:has(button[title="Clip"]), /* remove clip button */
-			/* yt-button-view-model:has(button[title$="Thanks"]) */
+			yt-button-view-model:has(button[title$="Thanks"]), /* remove thanks button */
 			ytd-rich-metadata-renderer[component-style="RICH_METADATA_RENDERER_STYLE_TOPIC"] /* remove "browse all gaming" etc button */
 			{ display: none !important }
 			ytd-rich-metadata-renderer { max-width: none !important } /* ... streth the rest */
@@ -67,6 +72,13 @@
 
 		@media -moz-pref("youtube.header.cleanup") {
 			#voice-search-button /* remove voice search button */
+			{ display: none !important }
+		}
+
+		@media -moz-pref("youtube.channel.cleanup") {
+			/* remove avatar live ring */
+			.yt-spec-avatar-shape__live-badge--badge-extra-large,
+			.yt-spec-avatar-shape--live-ring::after
 			{ display: none !important }
 		}
 

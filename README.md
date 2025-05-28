@@ -32,7 +32,7 @@ chrome
 - `youtube.shorts.hide`
 - `youtube.sidemenu.cleanup`
 - `youtube.feed.cleanup`
-- `youtube.feed.video.cleanup`
+- `youtube.thumbnail.cleanup`
 - `youtube.player.cleanup`
 - `youtube.player.theater.cleanup`
 - `youtube.header.cleanup`
