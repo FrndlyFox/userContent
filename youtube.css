@@ -37,6 +37,7 @@
 		ytd-item-section-renderer:has(ytd-reel-shelf-renderer), /* another in channel ?? */
 		ytd-video-renderer:has([overlay-style="SHORTS"]), /* in search among videos (maybe feed or channels too) */
 		yt-tab-shape[tab-title="Shorts"], /* channel tab */
+		yt-chip-cloud-chip-renderer:has([title="Shorts"]), /* search tab */
 		ytd-reel-shelf-renderer /* in video suggestions */
 		{ display: none !important }
 	}
