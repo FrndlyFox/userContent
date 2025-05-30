@@ -61,7 +61,7 @@
 		ytm-paid-content-overlay-renderer /* remove paid content popup on video preview */
 		{ display: none !important }
 		/* remove live avatars */
-		ytd-rich-item-renderer #decorated-avatar { display: none !important }
+		ytd-rich-item-renderer #avatar { display: none !important }
 		ytd-rich-item-renderer #avatar-link { display: block !important }
 		/* fix annoying corners on video preview */
 		#video-preview #thumbnail-container { border-radius: 12px !important; overflow: clip !important }
