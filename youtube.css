@@ -2,6 +2,7 @@
 	:root {
 		--accent: #f00 
 	}
+	ytd-app { overflow-x: hidden } /* fix overflow-x lol */
 
 	@media -moz-pref("youtube.gay") {
 		:root {
