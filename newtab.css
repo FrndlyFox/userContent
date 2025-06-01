@@ -1,0 +1,39 @@
+@-moz-document url-prefix("about:newtab"), url-prefix("about:home") {
+	@media -moz-pref("newtab.restyle") {
+
+		li.top-site-outer .title,
+		div:has(> .context-menu-button),
+		.icon-pin-small {
+			display: none !important;
+		}
+
+		body {
+			overflow-x: hidden;
+		}
+
+		.top-sites-list {
+			gap: 20px !important;
+		}
+
+		.top-site-outer,
+		.top-site-inner,
+		.top-site-button {
+			all: unset !important;
+		}
+
+		.tile {
+			width: 80px !important;
+			height: 80px !important;
+		}
+
+		.top-site-outer:hover {
+			transform: scale(1.1) rotate(5deg) !important;
+		}
+
+		.top-site-icon {
+			background-size: contain !important;
+			height: 40px !important;
+			width: 40px !important;
+		}
+	}
+}
