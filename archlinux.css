@@ -1,0 +1,65 @@
+@-moz-document url-prefix("https://archlinux.org/"),
+url-prefix("https://bbs.archlinux.org/"),
+url-prefix("https://aur.archlinux.org/") {
+	body, th, .results tr:nth-child(odd) {
+		background-color: #101418 !important;
+	}
+
+	body, dl dt {
+		color: #eaecf0 !important;
+	}
+
+	.box, tr, code {
+		background-color: #202122 !important;
+	}
+
+	select, input, button {
+		-moz-appearance: none !important;
+		appearance: none !important;
+		background: #101418 !important;
+		color: #eaecf0 !important;
+		border: solid 1px !important;
+		border-radius: 4px;
+	}
+
+	pre {
+		background: none !important;
+	}
+}
+@-moz-document url-prefix("https://archlinux.org/packages"),
+url-prefix("https://aur.archlinux.org/packages") {
+	th {
+		background: none !important;
+	}
+	#actionlist {
+		background-color: #202122 !important;
+	}
+}
+
+@-moz-document domain(bbs.archlinux.org) {
+	.punwrap a {
+		background: none !important;
+		border-color: transparent !important;
+	}
+
+	#brdmenu {
+		background: none !important;
+	}
+
+	.pun {
+		background-color: #101418 !important;
+	}
+
+	.blocktable h2, th {
+		background-color: #101418 !important;
+		color: #eaecf0 !important;
+	}
+	.punwrap {
+		color: #eaecf0 !important;
+		background-color: #202122 !important;
+	}
+
+	.pun label {
+		color: #eaecf0 !important;
+	}
+}
