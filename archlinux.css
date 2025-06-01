@@ -1,5 +1,6 @@
 @-moz-document url-prefix("https://archlinux.org/"),
 url-prefix("https://bbs.archlinux.org/"),
+url-prefix("https://man.archlinux.org/"),
 url-prefix("https://aur.archlinux.org/") {
 	body, th, .results tr:nth-child(odd) {
 		background-color: #101418 !important;
