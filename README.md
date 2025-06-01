@@ -42,3 +42,7 @@ hides google login popup everywhere
 - `youtube.player.theater.pretty` add round corners and margins to the theater player
 - `youtube.header.cleanup` hide voice search button in the header
 - `youtube.gay` gay
+
+## archlinux
+
+dark theme
