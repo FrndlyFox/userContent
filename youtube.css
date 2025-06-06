@@ -34,8 +34,8 @@
 	@media -moz-pref("youtube.shorts.hide") {
 		ytd-mini-guide-entry-renderer[aria-label="Shorts"], /* shorts button in side bar */
 		ytd-guide-entry-renderer:has([title="Shorts"]), /* shorts button in side menu */
-		ytd-rich-section-renderer:has(ytm-shorts-lockup-view-model-v2), /* shorts shelf everywhere */
-		ytd-item-section-renderer:has(ytd-reel-shelf-renderer), /* another in channel ?? */
+		ytd-rich-section-renderer:has(ytm-shorts-lockup-view-model-v2), /* inline shorts shelf */
+		ytd-item-section-renderer:has(ytd-reel-shelf-renderer):not(:has(ytd-shelf-renderer)), /* section that has only a shorts shelf */
 		ytd-video-renderer:has([overlay-style="SHORTS"]), /* in search among videos (maybe feed or channels too) */
 		yt-tab-shape[tab-title="Shorts"], /* channel tab */
 		yt-chip-cloud-chip-renderer:has([title="Shorts"]), /* search tab */
